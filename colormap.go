@@ -27,6 +27,10 @@ func (m ColorMap) Map(in float64) color.RGBA {
 
 	idx := int(math.Round(in * (m.fsteps - 1.0)))
 
+	if idx < 0 {
+		idx = 0
+	}
+
 	return m.data[idx]
 }
 
