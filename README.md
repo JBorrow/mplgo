@@ -9,6 +9,12 @@ to a `golang` struct.
 Example Usage
 -------------
 
+Download the package:
+
+```
+go get github.com/jborrow/mplgo
+```
+
 ```go
 package main
 
