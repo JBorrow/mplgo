@@ -4,7 +4,7 @@ mplgo
 A small package for using `matplotlib` colour maps in `golang`.
 
 Works by shelling out to `python` and extracting a color map directly from matplotlib,
-to a `golang` struct.
+to a `golang` struct. NaN values map to transparent white.
 
 Example Usage
 -------------

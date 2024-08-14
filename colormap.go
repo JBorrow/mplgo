@@ -6,6 +6,8 @@ import (
 	"math"
 )
 
+var BAD_COLOR = color.RGBA{1.0, 1.0, 1.0, 0.0}
+
 type ColorMap struct {
 	data   []color.RGBA
 	name   string
@@ -16,6 +18,12 @@ type ColorMap struct {
 func (m ColorMap) Map(in float64) color.RGBA {
 	in = math.Max(in, 0.0)
 	in = math.Min(in, 1.0)
+	
+	rounded := math.Round(in * (m.fsteps - 1.0))
+
+	if math.IsNaN(rounded) {
+		return BAD_COLOR
+	}
 
 	idx := int(math.Round(in * (m.fsteps - 1.0)))
 
