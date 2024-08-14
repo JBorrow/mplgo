@@ -19,7 +19,7 @@ import (
 	"github.com/jborrow/mplgo"
 )
 
-func (m mplgo.ColorMap) MapArrayToPNG(in [][]float64, file_name string) error {
+func MapArrayToPNG(m mplgo.ColorMap, in [][]float64, file_name string) error {
 	f, err := os.Create(file_name)
 	if err != nil {
 		return err
@@ -35,7 +35,7 @@ func (m mplgo.ColorMap) MapArrayToPNG(in [][]float64, file_name string) error {
 }
 
 func main() {
-	colorMap, err := mplgo.GetCmap("viridis", 512)
+	colorMap, err := mplgo.GetCmap("viridis", 128)
 
 	if err != nil {
 		log.Fatal(err)
@@ -53,7 +53,7 @@ func main() {
 	}
 
     // Write to the world
-	err = colorMap.MapArrayToPNG(data, "hello_world.png")
+	err = MapArrayToPNG(colorMap, data, "hello_world.png")
 
 	if err != nil {
 		log.Fatal(err)
