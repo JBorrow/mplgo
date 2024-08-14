@@ -10,6 +10,8 @@ Example Usage
 -------------
 
 ```go
+package main
+
 import (
 	"image/png"
 	"log"
