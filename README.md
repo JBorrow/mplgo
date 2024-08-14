@@ -14,10 +14,10 @@ import (
 	"image/png"
 	"log"
 	"os"
-	"jborrow/mplgo"
+	"github.com/jborrow/mplgo"
 )
 
-func (m ColorMap) MapArrayToPNG(in [][]float64, file_name string) error {
+func (m mplgo.ColorMap) MapArrayToPNG(in [][]float64, file_name string) error {
 	f, err := os.Create(file_name)
 	if err != nil {
 		return err
