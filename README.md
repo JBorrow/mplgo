@@ -14,7 +14,7 @@ import (
 	"image/png"
 	"log"
 	"os"
-    "jborrow/mplgo"
+	"jborrow/mplgo"
 )
 
 func (m ColorMap) MapArrayToPNG(in [][]float64, file_name string) error {
