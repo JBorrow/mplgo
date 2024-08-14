@@ -47,7 +47,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-    // Example data
+	// Example data
 	data := make([][]float64, 128)
 
 	for i := range data {
@@ -58,7 +58,7 @@ func main() {
 		data[i] = line
 	}
 
-    // Write to the world
+	// Write to the world
 	err = MapArrayToPNG(colorMap, data, "hello_world.png")
 
 	if err != nil {
